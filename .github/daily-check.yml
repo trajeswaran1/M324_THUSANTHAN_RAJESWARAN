@@ -1,0 +1,13 @@
+name: Daily Check
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # Jeden Tag um 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  log-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "Daily check läuft – alles gut 👍"

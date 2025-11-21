@@ -28,3 +28,14 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+  virus-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run ClamAV scan
+        uses: crazy-max/ghaction-clamav@v3
+        with:
+          path: .
