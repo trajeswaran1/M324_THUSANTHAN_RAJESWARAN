@@ -1,0 +1,18 @@
+name: PR Commenter
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  add-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add automatic PR comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            Danke für deinen Pull Request! 🚀  
+            Die CI-Checks laufen jetzt automatisch.
