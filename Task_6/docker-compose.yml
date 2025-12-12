@@ -1,6 +1,7 @@
 services:
   mysql:
-    image: mysql:latest
+    build: .
+    image: mysql-nano:latest
     container_name: mysql-demo
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
