@@ -1,0 +1,16 @@
+services:
+  sqlite:
+    image: keinos/sqlite3
+    container_name: sqlite-demo
+    volumes:
+      - sqlite_data:/db
+    networks:
+      - mynet
+    command: tail -f /dev/null # keeps container running
+
+volumes:
+  sqlite_data:
+
+networks:
+  mynet:
+    driver: bridge
